@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bokamoso-geomatics.framer.website/sitemap.xml
