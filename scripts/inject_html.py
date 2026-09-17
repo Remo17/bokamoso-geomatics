@@ -116,6 +116,11 @@ css_content = """
 target_files = {
     "public/contact/index.html": """
                 <div class="bk-form-container">
+                    <h3>Contact Information</h3>
+                    <p><strong>Head Office:</strong> Regus Business Park, 214 Beyers Naude Dr, Rustenburg, 0299</p>
+                    <p><strong>Satellite Office:</strong> Stand 152, Phatsima Township, Rustenburg, 0351</p>
+                    <p><strong>Phone:</strong> <a href="tel:0615027201">061 502 7201</a>, <a href="tel:0765346929">076 534 6929</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:kerengsenna@gmail.com">kerengsenna@gmail.com</a></p>
                     <h3>Send us a message</h3>
                     <form action="#" method="POST">
                         <div class="bk-form-group">
@@ -245,57 +250,72 @@ target_files = {
 }
 
 def inject():
-    # Process files
     for root, dirs, files in os.walk('public'):
         for file in files:
             if file == 'index.html':
                 filepath = os.path.join(root, file)
+                # Ensure OS compatibility by normalizing path string for matching
+                normalized_filepath = filepath.replace('\\', '/')
 
                 with open(filepath, 'r', encoding='utf-8') as f:
                     content = f.read()
 
-                # Remove the injection script
+                # Cleanup previous run's old logic
                 script_pattern = re.compile(r"<script>\s*window\.addEventListener\('load', function\(\)\s*\{[\s\S]*?\}\);\s*</script>", re.IGNORECASE)
                 content = script_pattern.sub("", content)
 
-                # Check if it has a head and if css isn't already there
-                if '<head>' in content:
-                    soup = BeautifulSoup(content, 'lxml')
-                    head = soup.find('head')
+                soup = BeautifulSoup(content, 'lxml')
 
-                    if head and ".bk-form-container" not in str(head):
-                        new_css_soup = BeautifulSoup(css_content, 'html.parser')
-                        head.append(new_css_soup)
-                        content = str(soup)
+                # Check head for css
+                head = soup.find('head')
+                if head and ".bk-form-container" not in str(head):
+                    new_css_soup = BeautifulSoup(css_content, 'html.parser')
+                    head.append(new_css_soup)
 
-                # Inject structural HTML if specified
-                if filepath in target_files:
-                    soup = BeautifulSoup(content, 'lxml')
+                if normalized_filepath in target_files:
+                    # Clear out the direct static HTML inside framer-cwupne
                     target_div = soup.find('div', class_='framer-cwupne')
-
                     if target_div:
                         target_div.clear()
-                        new_content_soup = BeautifulSoup(target_files[filepath], 'html.parser')
-                        target_div.append(new_content_soup)
-                        content = str(soup)
 
-                        # Fix Next.js hydration issues by using span instead of div in nested links, etc. if required, though the prompt implies HTML5 nesting might just work since it's statically rendered, not hydrated on client via setTimeout.
-                        print(f"Injected HTML into {filepath}")
-                    else:
-                        print(f"Could not find .framer-cwupne in {filepath}")
+                        custom_content = target_files[normalized_filepath].replace('`', '\\`').replace('\n', '')
+                        script_content = f"""
+<script id="bk-guard-script">
+  (function() {{
+    const customContent = `{custom_content}`;
+    const enforceContent = () => {{
+      const target = document.querySelector('.framer-cwupne');
+      if (target && !target.querySelector('.bk-form-container, .bk-project-grid, .bk-expertise-card, .bk-expertise-container')) {{
+        target.innerHTML = customContent;
+      }}
+    }};
+    // Run immediately
+    enforceContent();
+    // Guard against React hydration wipes
+    const observer = new MutationObserver(enforceContent);
+    observer.observe(document.body, {{ childList: true, subtree: true }});
+  }})();
+</script>"""
 
-                # Collection route folders (everything under public except the root and the ones in target_files)
-                # The user asked to parse all collection route folders as well, so maybe they have .framer-cwupne?
-                elif 'public/' in filepath and '/index.html' in filepath:
-                    soup = BeautifulSoup(content, 'lxml')
-                    target_div = soup.find('div', class_='framer-cwupne')
-                    if target_div and not target_div.contents:
-                        pass # They might just have the css appended if it didn't already have it
+                        body = soup.find('body')
+                        if body:
+                            # Cleanup existing observer script to be idempotent
+                            existing_script = body.find('script', id='bk-guard-script')
+                            if existing_script:
+                                existing_script.decompose()
 
-                # Just write back the content
+                            # Also clean up the previously duplicated scripts that lacked ID
+                            for old_script in body.find_all('script'):
+                                if old_script.string and "MutationObserver" in old_script.string and "enforceContent" in old_script.string:
+                                    old_script.decompose()
+
+                            script_soup = BeautifulSoup(script_content, 'html.parser')
+                            body.append(script_soup)
+                            print(f"Injected Observer script into {filepath}")
+
+                content = str(soup)
                 with open(filepath, 'w', encoding='utf-8') as f:
                     f.write(content)
-
 
 if __name__ == '__main__':
     inject()
