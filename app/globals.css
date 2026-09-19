@@ -220,3 +220,111 @@ a {
   left: 0;
   font-weight: bold;
 }
+
+/* Fix mobile overflows */
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .bk-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .bk-nav {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .bk-footer {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .bk-contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .bk-hero h1 {
+    font-size: 40px;
+  }
+}
+/* Make sure inputs and grids don't overflow on small screens */
+.bk-form-group input, .bk-form-group textarea, .bk-form-group select {
+  max-width: 100%;
+}
+.bk-contact-grid {
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .bk-contact-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+/* Force no overflow globally */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+* {
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+/* Final fix for horizontal overflow on grid gap */
+@media (max-width: 768px) {
+  .bk-contact-grid {
+    gap: 40px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+    width: 100vw;
+  }
+}
+/* Final final fix for mobile overflow, something is extending */
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+.bk-wrapper {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .bk-contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 0 !important;
+  }
+  .bk-container {
+    padding: 0 16px !important;
+  }
+}
+/* Email strings can cause overflow */
+p {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Force mobile contact grid to block to fix overflow */
+@media (max-width: 768px) {
+  .bk-contact-grid {
+    display: block !important;
+  }
+  .bk-contact-grid > div {
+    margin-bottom: 40px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
