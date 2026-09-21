@@ -16,46 +16,6 @@ const nextConfig = {
         destination: "/about/index.html"
       },
       {
-        source: "/services",
-        destination: "/services/index.html"
-      },
-      {
-        source: "/services/",
-        destination: "/services/index.html"
-      },
-      {
-        source: "/projects",
-        destination: "/projects/index.html"
-      },
-      {
-        source: "/projects/",
-        destination: "/projects/index.html"
-      },
-      {
-        source: "/expertise",
-        destination: "/expertise/index.html"
-      },
-      {
-        source: "/expertise/",
-        destination: "/expertise/index.html"
-      },
-      {
-        source: "/contact",
-        destination: "/contact/index.html"
-      },
-      {
-        source: "/contact/",
-        destination: "/contact/index.html"
-      },
-      {
-        source: "/request-a-quote",
-        destination: "/request-a-quote/index.html"
-      },
-      {
-        source: "/request-a-quote/",
-        destination: "/request-a-quote/index.html"
-      },
-      {
         source: "/services/engineering-surveys",
         destination: "/services/engineering-surveys/index.html"
       },
