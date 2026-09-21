@@ -18,7 +18,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-surface-light border-b border-border-light">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center">
-          <span className="font-bold text-sm tracking-[0.16em] uppercase text-text-primary-dark">
+          <span className="font-bold text-sm tracking-[0.16em] uppercase text-text-primary-dark font-cabinet-grotesk">
             BOKAMOSO GEOMATICS
           </span>
         </Link>

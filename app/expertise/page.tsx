@@ -84,7 +84,7 @@ export default function ExpertisePage() {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
               <div className="lg:col-span-8 flex flex-col gap-4">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-white">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-white font-cabinet-grotesk">
                   Led by a registered Professional Land Surveyor.
                 </h1>
                 <p className="text-lg sm:text-xl text-text-muted-light max-w-3xl">
@@ -126,7 +126,7 @@ export default function ExpertisePage() {
                   <span className="text-xs font-mono uppercase text-technical-green font-medium tracking-wide">
                     Principal Geomatics Practitioner
                   </span>
-                  <h2 className="text-2xl sm:text-3xl font-normal text-text-primary-dark mt-1">
+                  <h2 className="text-2xl sm:text-3xl font-normal text-text-primary-dark mt-1 font-cabinet-grotesk">
                     Kereng Senna, Pr. L.S.
                   </h2>
                   <p className="text-text-muted-dark mt-2 leading-relaxed">
@@ -202,7 +202,7 @@ export default function ExpertisePage() {
                 <span className="text-xs font-mono uppercase tracking-widest text-text-muted-dark">
                   Technical Capabilities
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-normal text-text-primary-dark mt-1">
+                <h2 className="text-2xl sm:text-3xl font-normal text-text-primary-dark mt-1 font-cabinet-grotesk">
                   Core Disciplines of Practice
                 </h2>
               </div>
@@ -240,7 +240,7 @@ export default function ExpertisePage() {
             <span className="text-xs font-mono uppercase tracking-widest text-text-muted-dark">
               Professional Standards
             </span>
-            <h2 className="text-2xl sm:text-3xl font-normal text-text-primary-dark mb-10 mt-1">
+            <h2 className="text-2xl sm:text-3xl font-normal text-text-primary-dark mb-10 mt-1 font-cabinet-grotesk">
               Quality Assurance & Peer Review Protocol
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
@@ -314,7 +314,7 @@ export default function ExpertisePage() {
                 <span className="text-xs font-mono uppercase tracking-widest text-text-muted-light">
                   Project Engagement
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-normal text-white mb-2 mt-1">
+                <h2 className="text-2xl sm:text-3xl font-normal text-white mb-2 mt-1 font-cabinet-grotesk">
                   Consult our registered geomatics team for your project.
                 </h2>
                 <p className="text-text-muted-light">

@@ -95,7 +95,7 @@ export default function ProjectsPage() {
               <p className="text-xs uppercase tracking-widest text-text-muted-dark font-mono mb-4">
                 Selected Projects & Practice Portfolio
               </p>
-              <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-normal tracking-tight text-text-primary-dark leading-[1.15] mb-6">
+              <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-normal tracking-tight text-text-primary-dark leading-[1.15] mb-6 font-cabinet-grotesk">
                 Recent survey, cadastral and spatial projects across the North West and beyond.
               </h1>
               <p className="text-base sm:text-lg text-text-muted-dark leading-relaxed max-w-3xl">
@@ -156,7 +156,7 @@ export default function ProjectsPage() {
                   <p className="text-xs font-mono uppercase tracking-wider text-technical-green mb-3">
                     Topographic & Infrastructure
                   </p>
-                  <h2 className="text-2xl sm:text-3xl font-normal text-text-primary-dark leading-snug mb-5">
+                  <h2 className="text-2xl sm:text-3xl font-normal text-text-primary-dark leading-snug mb-5 font-cabinet-grotesk">
                     Topographic Survey — Kanana Estate
                   </h2>
                   <p className="text-sm sm:text-base text-text-muted-dark leading-relaxed mb-8">
@@ -183,7 +183,7 @@ export default function ProjectsPage() {
                 <p className="text-xs font-mono uppercase tracking-widest text-text-muted-dark mb-2">
                   Engagements Archive
                 </p>
-                <h3 className="text-2xl sm:text-3xl font-normal text-text-primary-dark">
+                <h3 className="text-2xl sm:text-3xl font-normal text-text-primary-dark font-cabinet-grotesk">
                   Selected Practice Engagements
                 </h3>
               </div>
@@ -237,7 +237,7 @@ export default function ProjectsPage() {
                   <p className="text-xs font-mono uppercase tracking-widest text-text-muted-dark mb-2">
                     Practice Standard
                   </p>
-                  <h3 className="text-2xl sm:text-3xl font-normal text-text-primary-dark leading-snug">
+                  <h3 className="text-2xl sm:text-3xl font-normal text-text-primary-dark leading-snug font-cabinet-grotesk">
                     Uncompromising standards backed by statutory registration and geodetic
                     instrumentation.
                   </h3>

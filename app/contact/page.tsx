@@ -15,7 +15,7 @@ export default function ContactPage() {
               <div className="text-[11px] text-text-muted-dark uppercase tracking-[0.12em] mb-3 font-mono">
                 Rustenburg, North West · 25.67° S · 27.24° E
               </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-[46px] leading-tight lg:leading-[1.18] font-normal text-text-primary-dark max-w-4xl tracking-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-[46px] leading-tight lg:leading-[1.18] font-normal text-text-primary-dark max-w-4xl tracking-tight font-cabinet-grotesk">
                 Discuss your survey or land management project with us.
               </h1>
               <p className="text-base sm:text-lg text-text-muted-dark max-w-3xl mt-4 leading-relaxed">

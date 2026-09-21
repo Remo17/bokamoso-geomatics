@@ -67,7 +67,7 @@ export default function RequestAQuotePage() {
               <p className="text-xs font-mono uppercase tracking-wider text-technical-green font-medium mb-2">
                 Professional Survey Proposal
               </p>
-              <h1 className="text-3xl md:text-5xl font-normal tracking-tight text-text-primary-dark leading-tight">
+              <h1 className="text-3xl md:text-5xl font-normal tracking-tight text-text-primary-dark leading-tight font-cabinet-grotesk">
                 Request a Quote for Your Geomatics or Land Project.
               </h1>
               <p className="text-lg text-text-muted-dark mt-4 leading-relaxed">

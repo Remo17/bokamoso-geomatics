@@ -132,7 +132,7 @@ export default function ServicesPage() {
                   <span>·</span>
                   <span className="text-text-primary-dark font-medium">25.67° S · 27.24° E</span>
                 </div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-text-primary-dark leading-[1.1] mb-6">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-text-primary-dark leading-[1.1] mb-6 font-cabinet-grotesk">
                   Survey, map and manage land.
                 </h1>
                 <p className="text-lg sm:text-xl text-text-muted-dark leading-relaxed max-w-2xl mb-10">
@@ -177,7 +177,7 @@ export default function ServicesPage() {
                 <span className="text-xs uppercase tracking-widest text-technical-green font-semibold block mb-2">
                   Our Services
                 </span>
-                <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-text-primary-dark">
+                <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-text-primary-dark font-cabinet-grotesk">
                   Five Core Disciplines
                 </h2>
               </div>
@@ -197,7 +197,7 @@ export default function ServicesPage() {
                       <span className="text-xs uppercase tracking-widest text-technical-green font-semibold block mb-2">
                         {d.index} / Discipline
                       </span>
-                      <h3 className="text-2xl font-semibold text-text-primary-dark mb-3">{d.title}</h3>
+                      <h3 className="text-2xl font-semibold text-text-primary-dark mb-3 font-cabinet-grotesk">{d.title}</h3>
                       <p className="text-sm text-text-muted-dark leading-relaxed">{d.summary}</p>
                     </div>
                     <div className="lg:col-span-5 space-y-4">
@@ -243,7 +243,7 @@ export default function ServicesPage() {
               <span className="text-xs uppercase tracking-widest text-technical-green font-semibold block mb-2">
                 Quality Assurance
               </span>
-              <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-text-primary-dark mb-4">
+              <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-text-primary-dark mb-4 font-cabinet-grotesk">
                 Every survey is reviewed independently before submission.
               </h2>
               <p className="text-base text-text-muted-dark leading-relaxed">
@@ -272,7 +272,7 @@ export default function ServicesPage() {
                   <span className="text-xs uppercase tracking-widest text-technical-green font-semibold block mb-2">
                     Get in Touch
                   </span>
-                  <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-text-primary-dark mb-4">
+                  <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-text-primary-dark mb-4 font-cabinet-grotesk">
                     Discuss your survey or land management project with us.
                   </h2>
                   <p className="text-base text-text-muted-dark leading-relaxed mb-8 max-w-xl">

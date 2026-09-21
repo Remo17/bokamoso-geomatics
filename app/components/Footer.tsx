@@ -20,7 +20,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
           <div>
-            <span className="font-bold text-sm tracking-[0.16em] uppercase text-white block mb-4">
+            <span className="font-bold text-sm tracking-[0.16em] uppercase text-white block mb-4 font-cabinet-grotesk">
               BOKAMOSO GEOMATICS
             </span>
             <p className="text-xs text-text-muted-light leading-relaxed mb-4">
