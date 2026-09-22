@@ -1,6 +1,12 @@
 import Link from "next/link"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Expertise | Professional Land Surveyor | Bokamoso Geomatics",
+  description: "Led by registered Professional Land Surveyor Kereng Senna, Bokamoso Geomatics provides expert cadastral, engineering, and topographic surveying services with statutory compliance.",
+}
 
 const qualifications = [
   {

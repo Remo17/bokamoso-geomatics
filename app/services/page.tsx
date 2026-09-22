@@ -4,9 +4,9 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 
 export const metadata: Metadata = {
-  title: "Geomatics Services | GIS & Surveying | Bokamoso Geomatics",
+  title: "Services | Geomatics & Land Surveying | Bokamoso Geomatics",
   description:
-    "Bokamoso Geomatics provides comprehensive land surveying services including cadastral, engineering, and topographic surveys.",
+    "Professional geomatics services including topographic surveys, cadastral surveys, engineering surveys, GIS mapping, and land management from Rustenburg, North West.",
 }
 
 const disciplines = [
@@ -157,7 +157,7 @@ export default function ServicesPage() {
               <div className="lg:col-span-5">
                 <div className="border border-border-light bg-white p-3 shadow-sm">
                   <img
-                    alt="Topographic survey and contour delineation standard map sheet"
+                    alt="Topographic survey contour map showing elevation lines and terrain features"
                     className="w-full h-auto object-cover aspect-[4/3] border border-border-light"
                     src="/assets/framerusercontent.com/images/E6iiXV7Tc1uMxA5pkHMmBhguw.0n0mq8z.jpg"
                   />
