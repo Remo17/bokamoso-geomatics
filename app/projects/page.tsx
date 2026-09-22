@@ -5,13 +5,12 @@ import Link from "next/link"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 
-type Category = "all" | "topographic" | "cadastral" | "engineering"
+type Category = "all" | "topographic" | "cadastral"
 
 const filters: { key: Category; label: string }[] = [
   { key: "all", label: "All Projects" },
   { key: "topographic", label: "Topographic & Infrastructure" },
   { key: "cadastral", label: "Cadastral & Townships" },
-  { key: "engineering", label: "Engineering & Mining" },
 ]
 
 const projects = [
@@ -21,7 +20,9 @@ const projects = [
     title: "Topographic Survey — Kanana Estate",
     summary: "High-accuracy ground & feature survey for municipal growth corridors.",
     discipline: "Topographic Survey",
-    href: "/projects/topographic-survey-—-kanana-estate",
+    client: "Urban Regenesis",
+    year: "2019",
+    href: "/projects/topographic-survey-\u2014-kanana-estate",
   },
   {
     index: "02",
@@ -29,6 +30,8 @@ const projects = [
     title: "Subdivision of Various Municipal Erven",
     summary: "Cadastral layout, boundary pegging, and statutory lodgement with the SG.",
     discipline: "Cadastral Survey",
+    client: "JB Marks Local Municipality",
+    year: "2019–2020",
     href: "/projects/subdivision-of-various-municipal-erven",
   },
   {
@@ -37,6 +40,8 @@ const projects = [
     title: "Township Establishment: Ikageleng Township",
     summary: "General plan compilation, peg placement, and community tenure regularisation.",
     discipline: "Township Establishment",
+    client: "Urban Regenesis",
+    year: "2019/2020",
     href: "/projects/township-establishment-ikageleng-township",
   },
   {
@@ -45,6 +50,8 @@ const projects = [
     title: "Consolidation & Subdivision of Various Municipal Erven",
     summary: "Reconfiguration of urban parcels for civic infrastructure development.",
     discipline: "Cadastral Survey",
+    client: "JB Marks Local Municipality",
+    year: "2019",
     href: "/projects/consolidation-subdivision-of-various-municipal-erven",
   },
   {
@@ -53,31 +60,39 @@ const projects = [
     title: "Topographic Survey & Township Establishment: Mogwase",
     summary: "Dual-phase topo base map and statutory land reform township plan.",
     discipline: "Topographic / Township Est.",
+    client: "Urban Regenesis",
+    year: "2019/2020",
     href: "/projects/topographic-survey-township-establishment-mogwase",
   },
   {
     index: "06",
-    category: "topographic" as Category,
-    title: "Topographic Survey: Makouspan",
-    summary: "Topographic survey and feature mapping.",
-    discipline: "Topographic Survey",
-    href: "/projects/topographic-survey-makouspan",
+    category: "cadastral" as Category,
+    title: "Subdivision of a Farm 343 IT",
+    summary: "Statutory farm subdivision for rural land reform purposes.",
+    discipline: "Cadastral Survey",
+    client: "Dept. of Rural Development & Land Reform",
+    year: "2019",
+    href: "/projects/subdivision-of-a-farm-343-it",
   },
   {
     index: "07",
-    category: "cadastral" as Category,
-    title: "Beacon Relocation Erf 20478",
-    summary: "Boundary beacon relocation and cadastral verification.",
-    discipline: "Cadastral Survey",
-    href: "/projects/beacon-relocation-erf-20478",
+    category: "topographic" as Category,
+    title: "Topographic Survey: Makouspan",
+    summary: "Ground and feature survey supporting engineering consulting design work.",
+    discipline: "Topographic Survey",
+    client: "Mtema Mshao Consulting Engineers",
+    year: "2020",
+    href: "/projects/topographic-survey-makouspan",
   },
   {
     index: "08",
     category: "cadastral" as Category,
-    title: "Subdivision of a Farm 343 IT",
-    summary: "Farm subdivision and cadastral survey.",
+    title: "Beacon Relocation: Erf 20478",
+    summary: "Boundary confirmation and beacon replacement across 185 portions.",
     discipline: "Cadastral Survey",
-    href: "/projects/subdivision-of-a-farm-343-it",
+    client: "JB Marks Local Municipality",
+    year: "2020",
+    href: "/projects/beacon-relocation-erf-20478",
   },
 ]
 
@@ -144,7 +159,7 @@ export default function ProjectsPage() {
                   <img
                     alt="High-resolution aerial topographic orthomosaic of terrain at Kanana Estate"
                     className="w-full h-auto max-h-[540px] object-cover"
-                    src="/assets/framerusercontent.com/images/E6iiXV7Tc1uMxA5pkHMmBhguw.0n0mq8z.jpg"
+                    src="/assets/team/team-total-station.jpg"
                   />
                 </div>
                 <p className="text-xs font-mono text-text-muted-dark">
@@ -227,7 +242,7 @@ export default function ProjectsPage() {
                   <img
                     alt="Technical cartographic contour survey plate at 5 meter intervals"
                     className="w-full h-64 sm:h-80 object-cover"
-                    src="/assets/framerusercontent.com/images/LZtra09OX6i6PmetZ1v8vgx6lw.04a08ar.jpg"
+                    src="/assets/team/rover-open-field.jpg"
                   />
                 </div>
                 <p className="text-xs font-mono text-text-muted-dark">Fig. 02 — Contour interval 5 m</p>
