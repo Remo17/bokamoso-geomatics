@@ -1,10 +1,13 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 
 export default function ContactPage() {
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle")
+
   return (
     <>
       <Header />
@@ -134,7 +137,32 @@ export default function ContactPage() {
                     Complete the form below and our registered surveying team will respond within 24 hours.
                   </p>
                 </div>
-                <form className="flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
+                <form
+                  className="flex flex-col gap-5"
+                  onSubmit={async (e) => {
+                    e.preventDefault()
+                    setStatus("sending")
+                    const form = e.currentTarget
+                    const data = new FormData(form)
+                    try {
+                      const res = await fetch("https://formsubmit.co/ajax/tjiaremo@gmail.com", {
+                        method: "POST",
+                        headers: { Accept: "application/json" },
+                        body: data,
+                      })
+                      if (res.ok) {
+                        setStatus("sent")
+                        form.reset()
+                      } else {
+                        setStatus("error")
+                      }
+                    } catch {
+                      setStatus("error")
+                    }
+                  }}
+                >
+                  <input type="hidden" name="_subject" value="New Contact Inquiry — Bokamoso Geomatics" />
+                  <input type="hidden" name="_captcha" value="false" />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div className="flex flex-col gap-1.5">
                       <label className="text-xs font-medium text-text-primary-dark" htmlFor="fullName">
@@ -143,6 +171,7 @@ export default function ContactPage() {
                       <input
                         className="w-full h-11 px-3.5 bg-white border border-border-light text-text-primary-dark text-sm focus:border-surface-dark focus:ring-0 focus:outline-none transition-colors"
                         id="fullName"
+                        name="fullName"
                         placeholder="Adv. Thabo Mokoena"
                         required
                         type="text"
@@ -155,6 +184,7 @@ export default function ContactPage() {
                       <input
                         className="w-full h-11 px-3.5 bg-white border border-border-light text-text-primary-dark text-sm focus:border-surface-dark focus:ring-0 focus:outline-none transition-colors"
                         id="orgName"
+                        name="orgName"
                         placeholder="Municipality or Private Developer"
                         type="text"
                       />
@@ -168,6 +198,7 @@ export default function ContactPage() {
                       <input
                         className="w-full h-11 px-3.5 bg-white border border-border-light text-text-primary-dark text-sm focus:border-surface-dark focus:ring-0 focus:outline-none transition-colors"
                         id="emailAddress"
+                        name="emailAddress"
                         placeholder="name@domain.co.za"
                         required
                         type="email"
@@ -180,6 +211,7 @@ export default function ContactPage() {
                       <input
                         className="w-full h-11 px-3.5 bg-white border border-border-light text-text-primary-dark text-sm focus:border-surface-dark focus:ring-0 focus:outline-none transition-colors"
                         id="phoneContact"
+                        name="phoneContact"
                         placeholder="061 502 7201"
                         required
                         type="tel"
@@ -193,6 +225,7 @@ export default function ContactPage() {
                     <select
                       className="w-full h-11 px-3.5 bg-white border border-border-light text-text-primary-dark text-sm focus:border-surface-dark focus:ring-0 focus:outline-none transition-colors"
                       id="inquiryType"
+                        name="inquiryType"
                       required
                       defaultValue=""
                     >
@@ -212,6 +245,7 @@ export default function ContactPage() {
                     <input
                       className="w-full h-11 px-3.5 bg-white border border-border-light text-text-primary-dark text-sm focus:border-surface-dark focus:ring-0 focus:outline-none transition-colors"
                       id="propertyRef"
+                        name="propertyRef"
                       placeholder="e.g. Erf 4022 Rustenburg Ext 9 or Portion 12 Farm Paardekraal"
                       type="text"
                     />
@@ -223,6 +257,7 @@ export default function ContactPage() {
                     <textarea
                       className="w-full p-3.5 bg-white border border-border-light text-text-primary-dark text-sm focus:border-surface-dark focus:ring-0 focus:outline-none transition-colors resize-y leading-relaxed"
                       id="inquiryMessage"
+                        name="inquiryMessage"
                       placeholder="Provide details regarding your site parameters, statutory timeline, or requirements..."
                       required
                       rows={5}
@@ -233,11 +268,18 @@ export default function ContactPage() {
                       Client confidentiality & cadastral data integrity maintained.
                     </p>
                     <button
-                      className="inline-flex items-center justify-center px-6 py-3 bg-surface-dark text-white text-sm font-medium hover:bg-surface-dark-elevated transition-colors border border-surface-dark cursor-pointer text-center whitespace-nowrap"
+                      className="inline-flex items-center justify-center px-6 py-3 bg-surface-dark text-white text-sm font-medium hover:bg-surface-dark-elevated transition-colors border border-surface-dark cursor-pointer text-center whitespace-nowrap disabled:opacity-60"
                       type="submit"
+                      disabled={status === "sending"}
                     >
-                      Send Message ↗
+                      {status === "sending" ? "Sending..." : "Send Message ↗"}
                     </button>
+                    {status === "sent" && (
+                      <p className="text-sm text-technical-green font-medium">Message sent — we'll be in touch soon.</p>
+                    )}
+                    {status === "error" && (
+                      <p className="text-sm text-red-600 font-medium">Something went wrong. Please try again or email us directly.</p>
+                    )}
                   </div>
                 </form>
               </div>

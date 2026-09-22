@@ -142,7 +142,7 @@ export default function RequestAQuotePage() {
                   <img
                     alt="Cadastral triangulation and terrain contour plan"
                     className="w-full h-56 object-cover"
-                    src="/assets/framerusercontent.com/images/JB88BIQ07eV7owBXKANXwfPEeio.1gjfbmc.jpg"
+                    src="/assets/team/drone-over-field.jpg"
                   />
                   <div className="p-3 border-t border-border-light">
                     <span className="text-xs font-mono text-text-muted-dark">
@@ -176,11 +176,24 @@ export default function RequestAQuotePage() {
                   ) : (
                     <form
                       className="space-y-8"
-                      onSubmit={(e) => {
+                      onSubmit={async (e) => {
                         e.preventDefault()
-                        setSubmitted(true)
+                        const form = e.currentTarget
+                        const data = new FormData(form)
+                        try {
+                          const res = await fetch("https://formsubmit.co/ajax/tjiaremo@gmail.com", {
+                            method: "POST",
+                            headers: { Accept: "application/json" },
+                            body: data,
+                          })
+                          if (res.ok) setSubmitted(true)
+                        } catch {
+                          // fall through silently; could add error state here if needed
+                        }
                       }}
                     >
+                      <input type="hidden" name="_subject" value="New Quote Request — Bokamoso Geomatics" />
+                      <input type="hidden" name="_captcha" value="false" />
                       <div className="space-y-4">
                         <h3 className="text-xs font-semibold uppercase tracking-wider text-text-primary-dark">
                           Section 1: Client & Contact Particulars
@@ -193,6 +206,7 @@ export default function RequestAQuotePage() {
                             <input
                               className="w-full h-11 px-3.5 bg-white border border-border-light text-text-primary-dark text-sm focus:outline-none focus:border-surface-dark transition-colors"
                               id="client-name"
+                              name="client-name"
                               placeholder="e.g. Tshepo Molefe"
                               required
                               type="text"
@@ -205,6 +219,7 @@ export default function RequestAQuotePage() {
                             <input
                               className="w-full h-11 px-3.5 bg-white border border-border-light text-text-primary-dark text-sm focus:outline-none focus:border-surface-dark transition-colors"
                               id="company-name"
+                              name="company-name"
                               placeholder="e.g. Bakwena Mining / Private Owner"
                               type="text"
                             />
@@ -218,6 +233,7 @@ export default function RequestAQuotePage() {
                             <input
                               className="w-full h-11 px-3.5 bg-white border border-border-light text-text-primary-dark text-sm focus:outline-none focus:border-surface-dark transition-colors"
                               id="email"
+                              name="email"
                               placeholder="name@organization.co.za"
                               required
                               type="email"
@@ -230,6 +246,7 @@ export default function RequestAQuotePage() {
                             <input
                               className="w-full h-11 px-3.5 bg-white border border-border-light text-text-primary-dark text-sm focus:outline-none focus:border-surface-dark transition-colors"
                               id="phone"
+                              name="phone"
                               placeholder="e.g. 082 000 0000"
                               required
                               type="tel"
@@ -250,6 +267,7 @@ export default function RequestAQuotePage() {
                             <select
                               className="w-full h-11 px-3.5 bg-white border border-border-light text-text-primary-dark text-sm focus:outline-none focus:border-surface-dark transition-colors"
                               id="municipality"
+                              name="municipality"
                               required
                               defaultValue=""
                             >
@@ -269,6 +287,7 @@ export default function RequestAQuotePage() {
                             <input
                               className="w-full h-11 px-3.5 bg-white border border-border-light text-text-primary-dark text-sm focus:outline-none focus:border-surface-dark transition-colors"
                               id="cadastral-id"
+                              name="cadastral-id"
                               placeholder="e.g. Portion 4 of Farm Paardekraal 279 JQ"
                               required
                               type="text"
@@ -283,6 +302,7 @@ export default function RequestAQuotePage() {
                             <input
                               className="w-full h-11 px-3.5 bg-white border border-border-light text-text-primary-dark text-sm focus:outline-none focus:border-surface-dark transition-colors"
                               id="extent"
+                              name="extent"
                               placeholder="e.g. 1 500 m² or 45 Hectares"
                               type="text"
                             />
@@ -294,6 +314,7 @@ export default function RequestAQuotePage() {
                             <input
                               className="w-full h-11 px-3.5 bg-white border border-border-light text-text-primary-dark text-sm focus:outline-none focus:border-surface-dark transition-colors"
                               id="known-coords"
+                              name="known-coords"
                               placeholder="e.g. -25.6712, 27.2421"
                               type="text"
                             />
@@ -333,6 +354,7 @@ export default function RequestAQuotePage() {
                             <select
                               className="w-full h-11 px-3.5 bg-white border border-border-light text-text-primary-dark text-sm focus:outline-none focus:border-surface-dark transition-colors"
                               id="deliverable-format"
+                              name="deliverable-format"
                               defaultValue="cad"
                             >
                               <option value="cad">AutoCAD (.DWG / .DXF) + PDF Maps</option>
@@ -348,6 +370,7 @@ export default function RequestAQuotePage() {
                             <select
                               className="w-full h-11 px-3.5 bg-white border border-border-light text-text-primary-dark text-sm focus:outline-none focus:border-surface-dark transition-colors"
                               id="timeline"
+                              name="timeline"
                               defaultValue="immediate"
                             >
                               <option value="immediate">Immediate (Within 7 Days)</option>
@@ -363,6 +386,7 @@ export default function RequestAQuotePage() {
                           <textarea
                             className="w-full p-3.5 bg-white border border-border-light text-text-primary-dark text-sm focus:outline-none focus:border-surface-dark transition-colors"
                             id="project-description"
+                              name="project-description"
                             placeholder="Describe the purpose of survey, site access, any previous SG diagram numbers, or timeline requirements."
                             required
                             rows={4}
