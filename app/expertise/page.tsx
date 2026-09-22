@@ -172,7 +172,7 @@ export default function ExpertisePage() {
                   <img
                     alt="Cadastral boundary and geodetic reference standard map"
                     className="w-full h-full object-cover grayscale contrast-125"
-                    src="/assets/framerusercontent.com/images/LZtra09OX6i6PmetZ1v8vgx6lw.04a08ar.jpg"
+                    src="/assets/team/equipment-dusk-sky.jpg"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-surface-dark/90 px-4 py-1.5 border-t border-border-dark flex items-center justify-between">
                     <span className="text-xs font-mono text-white">

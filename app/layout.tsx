@@ -16,7 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 const cabinetGrotesk = localFont({
-  src: "../public/assets/framerusercontent.com/third-party-assets/fontshare/wf/J2PZYZURCR7HNQKXCZ4VXYA3K5FFCCLT/PZSZLWHMBCE7FFGOUYDEU33FAESUMA3X/JFDL5FBAQ2WMYL3LGKSCZKAIFCS2UQ63.woff2",
+  src: "../public/assets/fonts/cabinet-grotesk.woff2",
   variable: "--font-cabinet-grotesk",
   display: "swap",
 })

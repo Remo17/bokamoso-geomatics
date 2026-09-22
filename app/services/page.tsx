@@ -159,7 +159,7 @@ export default function ServicesPage() {
                   <img
                     alt="Topographic survey contour map showing elevation lines and terrain features"
                     className="w-full h-auto object-cover aspect-[4/3] border border-border-light"
-                    src="/assets/framerusercontent.com/images/E6iiXV7Tc1uMxA5pkHMmBhguw.0n0mq8z.jpg"
+                    src="/assets/team/tripod-clear-sky.jpg"
                   />
                   <div className="pt-3 pb-1 px-1 flex items-center justify-between text-xs text-text-muted-dark">
                     <span>Fig. 01 — Topographic survey and contour delineation standard</span>

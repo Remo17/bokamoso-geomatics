@@ -1,2 +1,0 @@
-import{t as e}from"./rolldown-runtime.Dh6celcD.mjs";function t(e,t){return{description:`Bokamoso Geomatics is a professional geomatics and land surveying company based in Rustenburg, North West, offering topographic, engineering and cadastral surveys, GIS, land management and town planning services.`,robots:`max-image-preview:large`,title:`Bokamoso Geomatics — Land Surveying & Geomatics, Rustenburg`}}var n=e((()=>{}));export{t as n,n as t};
-//# sourceMappingURL=shared-lib.DY1f2qSb.mjs.map
