@@ -22,7 +22,7 @@ const projects = [
     discipline: "Topographic Survey",
     client: "Urban Regenesis",
     year: "2019",
-    href: "/projects/topographic-survey-\u2014-kanana-estate",
+    href: "/projects/topographic-survey-kanana-estate",
   },
   {
     index: "02",
@@ -180,7 +180,7 @@ export default function ProjectsPage() {
                 </div>
                 <div className="pt-4">
                   <Link
-                    href="/projects/topographic-survey-—-kanana-estate"
+                    href="/projects/topographic-survey-kanana-estate"
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-surface-dark text-white text-sm font-medium hover:bg-black transition-colors"
                   >
                     View Project ↗

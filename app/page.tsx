@@ -11,7 +11,7 @@ const services = [
 ]
 
 const projects = [
-  { number: "01", title: "Topographic Survey — Kanana Estate", discipline: "Topographic Survey", client: "Kanana Estate", year: "2019", href: "/projects/topographic-survey-—-kanana-estate" },
+  { number: "01", title: "Topographic Survey — Kanana Estate", discipline: "Topographic Survey", client: "Kanana Estate", year: "2019", href: "/projects/topographic-survey-kanana-estate" },
   { number: "02", title: "Subdivision of Various Municipal Erven", discipline: "Cadastral Survey", client: "JB Marks Local Municipality", year: "2019–2020", href: "/projects/subdivision-of-various-municipal-erven" },
   { number: "03", title: "Township Establishment: Ikageleng Township", discipline: "Township Establishment", client: "Zeerust", year: "2019/2020", href: "/projects/township-establishment-ikageleng-township" },
 ]
