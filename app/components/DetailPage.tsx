@@ -56,7 +56,7 @@ export default function DetailPage({
                   {record.eyebrow} · {record.category}
                 </p>
 
-                <h1 className="mt-6 max-w-5xl font-cabinet-grotesk text-5xl font-semibold leading-[0.94] tracking-[-0.045em] sm:text-6xl lg:text-[76px]">
+                <h1 className="mt-6 max-w-5xl font-cabinet-grotesk text-4xl font-semibold leading-[0.94] tracking-[-0.045em] sm:text-5xl lg:text-[76px]">
                   {record.title}
                 </h1>
 
